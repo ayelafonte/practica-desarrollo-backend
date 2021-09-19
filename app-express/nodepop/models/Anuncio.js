@@ -20,6 +20,11 @@ anuncioSchema.statics.lista = function(filtro, skip, limit, select, sort) {
     return query.exec();
 }
  
+anuncioSchema.statics.tags = function(){
+    const query = Anuncio.find().distinct('tags');
+    return query.exec();
+}
+ 
 // Crear modelo
 const Anuncio = mongoose.model('Anuncio', anuncioSchema);
 

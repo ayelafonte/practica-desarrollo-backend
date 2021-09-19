@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -25,6 +27,7 @@ app.locals.title = 'NodePOP';
 
 // Rutas de la API
 app.use(('/api/anuncios'), require ('./routes/api/anuncios'))
+app.use(('/api/tags'), require('./routes/api/tags'))
 
 // Rutas del website
 app.use('/', require('./routes/index'));

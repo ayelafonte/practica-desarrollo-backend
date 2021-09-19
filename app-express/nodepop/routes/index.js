@@ -46,8 +46,13 @@ router.get('/', async (req, res, next) => {
           filtro.tags = tags
       }
 
-      const anuncios = await Anuncio.lista(filtro, skip, limit, select, sort)
-      res.json({ results: anuncios });
+      //const anuncios = await Anuncio.lista(filtro, skip, limit, select, sort)
+      //res.json({ results: anuncios });
+      const anuncios = await Anuncio.lista(filtro, skip || 0 , limit || 10, select, sort)
+      const listaTags = await Anuncio.tags()
+      res.render('index', { anuncios, paginacion: {nombre, venta, precio, tags, skip, limit}, listaTags })
+
+
   } catch (err) {
       next(err);
   }   

@@ -4,8 +4,37 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
+
   <body>
+    <header>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    
+    <div id = "nodepop">
+        <%anuncios.forEach(anuncio => { %>
+        <article class = "anuncio">
+          <div class = "anuncio-card">
+            <h1 class = "anuncio-title"><%= anuncio.nombre %></h1>
+            <img src = "../public/images/" alt="" style="max-width: 300px; max-height: 300px;">
+            <div class ="anuncio-status">
+              <span class="status">
+                <% if (anuncio.venta === true) { %>
+                COMPRO
+                <% } else { %>
+                VENDO
+                <% } %>
+              </span>
+              <span><%= anuncio.precio %>€</span>
+            </div>
+          </div>
+          <div class="anuncio-tags">
+            <% anuncio.tags.forEach(tag => {  %>
+            <a href="./?tags=<%= tag %>&nombre=<%= paginacion.nombre %>&precio=<%= paginacion.precio %>&venta=<%= paginacion.venta %>"><%= tag %></a>
+            <% }); %>
+          </div>
+        </article>
+        <% }); %>
+  
+    
   </body>
 </html>
