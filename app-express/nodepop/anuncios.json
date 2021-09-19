@@ -4,7 +4,7 @@
             "nombre": "Guitarra",
             "venta": false,
             "precio": 150,
-            "foto": "./images/guitarra.jpg",
+            "foto": "guitarra.jpg",
             "tags": ["lifestyle", "work"]
         },
         {
