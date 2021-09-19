@@ -7,6 +7,9 @@ var logger = require('morgan');
 
 var app = express();
 
+// Conectar a la BBDD
+require('.lib/connectMongoose');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
