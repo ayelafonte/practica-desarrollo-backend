@@ -8,7 +8,7 @@ var logger = require('morgan');
 var app = express();
 
 // Conectar a la BBDD
-require('.lib/connectMongoose');
+require('./lib/connectMongoose');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -19,6 +19,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Titulo de la API
+app.locals.title = 'NodePOP';
+
+// Rutas de la API
+app.use(('/api/anuncios'), require ('./routes/api/anuncios'))
+
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));

@@ -10,7 +10,7 @@ mongoose.connection.on('error', err => {
 
 // Abrir BBDD
 mongoose.connection.once('open', () => {
-    console.log('Conexión establecida en:', mongoose.connection.name);
+    console.log('Conexión a la BD establecida en:', mongoose.connection.name);
 });
 
 // Conectar con la BBDD
