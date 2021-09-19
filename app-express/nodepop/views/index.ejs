@@ -15,7 +15,7 @@
         <article class = "anuncio">
           <div class = "anuncio-card">
             <h1 class = "anuncio-title"><%= anuncio.nombre %></h1>
-            <img src = "../public/images/" alt="" style="max-width: 300px; max-height: 300px;">
+            <img src="../images/<%= anuncio.foto %> style="max-width: 300px; max-height: 300px;">
             <div class ="anuncio-status">
               <span class="status">
                 <% if (anuncio.venta === true) { %>
