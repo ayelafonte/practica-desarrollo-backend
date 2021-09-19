@@ -13,3 +13,11 @@ npm run dev
 ```sh
 ./bin/mongod --dbpath ./data/db
 ```
+
+# Inicializar la Base de Datos
+
+Para hacer una carga inicial en la base de datos:
+
+```sh
+npm run initDB
+```
