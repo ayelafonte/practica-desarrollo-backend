@@ -26,7 +26,7 @@ app.locals.title = 'NodePOP';
 // Rutas de la API
 app.use(('/api/anuncios'), require ('./routes/api/anuncios'))
 
-
+// Rutas del website
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
@@ -47,3 +47,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
